@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BEPStore::Goals::HangoutsController, type: :controller do
+RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
   routes { BEPStore::Goals::Engine.routes }
 
   include_context 'authentication'

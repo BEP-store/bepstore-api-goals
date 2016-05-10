@@ -1,4 +1,4 @@
-class Hangout < Activity
+class Goal < Activity
   field :title, type: String
   field :description, type: String
   field :url, type: String
@@ -19,6 +19,6 @@ class Hangout < Activity
   # :nocov:
 
   def self.engine
-    'google'
+    'goals'
   end
 end
