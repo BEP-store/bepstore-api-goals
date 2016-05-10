@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Hangout, type: :model do
-  let(:hangout) { FactoryGirl.create(:hangout) }
+RSpec.describe Goal, type: :model do
+  let(:goal) { FactoryGirl.create(:goal) }
 
-  subject { hangout }
+  subject { goal }
 
   it { should validate_presence_of(:parents) }
   it { should validate_presence_of(:title) }

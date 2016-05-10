@@ -1,4 +1,4 @@
-class HangoutPolicy < ActivityPolicy
+class GoalPolicy < ActivityPolicy
   def permitted_attributes
     [:title, :url]
   end

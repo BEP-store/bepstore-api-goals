@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :hangout do
+  factory :goal do
     user
     sequence(:title) { |n| "Text #{n}" }
     sequence(:url) { |n| "Url #{n}" }

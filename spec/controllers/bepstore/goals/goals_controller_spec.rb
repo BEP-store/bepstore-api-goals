@@ -8,8 +8,8 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
 
   let!(:parent) { FactoryGirl.create(:activity, groups: [group]) }
 
-  let!(:activity) { FactoryGirl.create(:hangout, user: user, groups: [group]) }
-  let!(:activity2) { FactoryGirl.create(:hangout, groups: [group]) }
+  let!(:activity) { FactoryGirl.create(:goal, user: user, groups: [group]) }
+  let!(:activity2) { FactoryGirl.create(:goal, groups: [group]) }
 
   let!(:params) { { title: "Testing title",url: "https://plus.google.com/_/fake-hangouts-id", group_ids: [group.id], parent_ids: [parent.id] } }
 
