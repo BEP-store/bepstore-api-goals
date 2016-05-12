@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.summary     = "BEPStore Goals Engine"
 
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  # s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_development_dependency "rails"
   s.add_development_dependency "sqlite3"
