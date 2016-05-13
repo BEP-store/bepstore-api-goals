@@ -1,3 +1,4 @@
+# Activity goal
 class Goal < Activity
   field :title, type: String
   field :description, type: String
