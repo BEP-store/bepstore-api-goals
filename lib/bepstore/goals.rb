@@ -1,7 +1,7 @@
 require 'bepstore/goals/engine'
 
 module BEPStore
-  # a
+  # Goals engine
   module Goals
   end
 end
