@@ -1,4 +1,4 @@
 # GoalSerializer
 class GoalSerializer < ActivitySerializer
-  attributes :title, :description, :url
+  attributes :title, :description
 end
