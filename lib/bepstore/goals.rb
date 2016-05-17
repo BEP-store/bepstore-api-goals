@@ -1,4 +1,4 @@
-require "bepstore/goals/engine"
+require 'bepstore/goals/engine'
 
 module BEPStore
   module Goals

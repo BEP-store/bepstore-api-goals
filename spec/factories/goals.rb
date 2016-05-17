@@ -1,15 +1,14 @@
 FactoryGirl.define do
   factory :goal do
-    user
+    # user
     sequence(:title) { |n| "Text #{n}" }
-    sequence(:url) { |n| "Url #{n}" }
 
-    after(:build) do |activity|
-      activity.parents << create(:activity)
-      activity.groups.push(activity.parents.map(&:groups).flatten)
-      unless activity.user.enrolled?(activity.groups.first)
-        activity.user.enroll!(activity.groups.first, create(:role))
-      end
-    end
+    # after(:build) do |activity|
+    #   activity.parents << create(:activity)
+    #   activity.groups.push(activity.parents.map(&:groups).flatten)
+    #   unless activity.user.enrolled?(activity.groups.first)
+    #     activity.user.enroll!(activity.groups.first, create(:role))
+    #   end
+    # end
   end
 end
