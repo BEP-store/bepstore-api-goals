@@ -5,8 +5,7 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
 
   let!(:params) do
     {
-      title: 'Testing title',
-      url: 'https://plus.google.com/_/fake-hangouts-id'
+      title: 'Testing title'
     }
   end
 

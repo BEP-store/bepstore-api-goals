@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :goal do
     # user
     sequence(:title) { |n| "Text #{n}" }
-    sequence(:url) { |n| "Url #{n}" }
 
     # after(:build) do |activity|
     #   activity.parents << create(:activity)
