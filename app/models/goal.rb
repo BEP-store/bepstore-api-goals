@@ -1,13 +1,17 @@
 # Activity goal
 class Goal < Activity
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Paranoia
+
   field :id, type: Integer
   field :title, type: String
   field :description, type: String
   field :status, type: String
 
   # Should be moved out of here
-  field :update, type: Text
-  
+  field :updateText, type: RichText
+
   # Core team
   field :product_owner, type: Integer
   field :head_design, type: Integer
@@ -16,8 +20,10 @@ class Goal < Activity
 
   alias_attribute :name, :title
 
-  validates :title, presence: true
   validates :parents, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :status, presence: true
 
   def self.engine
     'goals'

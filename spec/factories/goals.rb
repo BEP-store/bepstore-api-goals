@@ -2,6 +2,8 @@ FactoryGirl.define do
   factory :goal do
     user
     sequence(:title) { |n| "Text #{n}" }
+    sequence(:description) { |n| "Desc #{n}" }
+    sequence(:status) { |n| "Status #{n}" }
 
     after(:build) do |activity|
       activity.parents << create(:activity)
