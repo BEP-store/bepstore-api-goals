@@ -6,7 +6,7 @@ class Goal < Activity
   field :status, type: String
 
   # Should be moved out of here
-  field :updateText, type: RichText
+  field :updateText, type: String
 
   # Core team
   field :product_owner, type: Integer
