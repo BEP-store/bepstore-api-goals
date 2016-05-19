@@ -1,9 +1,5 @@
 # Activity goal
 class Goal < Activity
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Paranoia
-
   field :id, type: Integer
   field :title, type: String
   field :description, type: String
