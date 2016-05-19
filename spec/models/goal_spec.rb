@@ -5,6 +5,7 @@ RSpec.describe Goal, type: :model do
 
   subject { goal }
 
+  it { should validate_presence_of(:parents) }
   it { should validate_presence_of(:title) }
 
   it_behaves_like 'Activity'
