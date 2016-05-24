@@ -1,6 +1,5 @@
 # Activity goal
 class Goal < Activity
-  field :id, type: Integer
   field :title, type: String
   field :description, type: String
   field :status, type: String
