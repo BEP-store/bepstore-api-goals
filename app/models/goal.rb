@@ -16,7 +16,7 @@ class Goal < Activity
 
   alias_attribute :name, :title
 
-  validates :parents, presence: true
+  #validates :parents, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true
