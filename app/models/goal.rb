@@ -1,5 +1,8 @@
 # Activity goal
 class Goal < Activity
+
+  belongs_to :user
+
   field :title, type: String
   field :description, type: String
   field :status, type: String
@@ -15,7 +18,7 @@ class Goal < Activity
 
   alias_attribute :name, :title
 
-  validates :parents, presence: true
+  # validates :parents, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true
