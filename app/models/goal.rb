@@ -1,8 +1,5 @@
 # Activity goal
 class Goal < Activity
-
-  belongs_to :user
-
   field :title, type: String
   field :description, type: String
   field :status, type: String
@@ -11,14 +8,16 @@ class Goal < Activity
   field :updateText, type: String
 
   # Core team
-  field :product_owner, type: Integer
-  field :head_design, type: Integer
-  field :head_frontend, type: Integer
-  field :head_backend, type: Integer
+  field :product_owner_id, type: User
+  field :head_design_id, type: User
+  field :head_frontend_id, type: User
+  field :head_backend_id, type: User
+
+  has_many :contributor_ids, class_name: "User"
 
   alias_attribute :name, :title
 
-  # validates :parents, presence: true
+  #validates :parents, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true
