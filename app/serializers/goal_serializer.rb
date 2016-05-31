@@ -2,7 +2,8 @@
 class GoalSerializer < ActivitySerializer
   self.perform_caching = false
 
-  attributes :id, :title, :description, :status, :update, :product_owner, :head_design, :head_frontend, :head_backend
+  attributes :id, :title, :description, :status, :update, :product_owner_id, :head_design_id, :head_frontend_id, :head_backend_id
+  has_many :contributors
 
   def initialize(object, options)
     super(object, options)
@@ -22,5 +23,4 @@ class GoalSerializer < ActivitySerializer
       end
     end
   end
-
 end
