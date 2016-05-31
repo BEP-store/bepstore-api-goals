@@ -1,5 +1,5 @@
 class GoalPolicy < ActivityPolicy
   def permitted_attributes
-    [:title]
+    [:title, :description, :resources]
   end
 end

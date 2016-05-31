@@ -20,6 +20,8 @@ class Goal < Activity
   validates :description, presence: true
   validates :status, presence: true
 
+  has_many :resources
+
   def self.engine
     'goals'
   end
