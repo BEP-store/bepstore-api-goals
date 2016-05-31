@@ -13,7 +13,7 @@ class Goal < Activity
   field :head_frontend_id, type: User
   field :head_backend_id, type: User
 
-  has_many :contributor_ids, class_name: "User"
+  has_and_belongs_to_many :contributors, class_name: 'User'
 
   alias_attribute :name, :title
 
