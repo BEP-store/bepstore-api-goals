@@ -12,5 +12,15 @@ FactoryGirl.define do
         activity.user.enroll!(activity.groups.first, create(:role))
       end
     end
+
+    factory :goal_with_resources do
+      transient do
+        resources_count 5
+      end
+
+      after(:create) do |goal, evaluator|
+        create_list(:resource, evaluator.resources_count, goal: goal)
+      end
+    end
   end
 end
