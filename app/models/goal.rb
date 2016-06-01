@@ -4,7 +4,7 @@ class Goal < Activity
   field :description, type: String
   field :status, type: String
 
-  # Should be moved out of here
+  # Should be moved out of here to Update or something
   field :updateText, type: String
 
   # Core team
@@ -15,14 +15,15 @@ class Goal < Activity
 
   has_and_belongs_to_many :contributors, class_name: 'User'
 
+  has_many :resources
+  accepts_nested_attributes_for :resources
+
   alias_attribute :name, :title
 
   #validates :parents, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true
-
-  has_many :resources
 
   def self.engine
     'goals'
