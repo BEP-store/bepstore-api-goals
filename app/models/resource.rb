@@ -5,8 +5,8 @@ class Resource
 
   belongs_to :goal
 
-  field :route
-  field :type
+  field :route, type: String
+  field :type, type: String
 
   validates :route, presence: true
   validates :type, presence: true
