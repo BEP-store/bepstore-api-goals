@@ -8,10 +8,10 @@ class Goal < Activity
   field :updateText, type: String
 
   # Core team
-  has_one :product_owner, class_name: 'User'
-  has_one :head_design, class_name: 'User'
-  has_one :head_frontend, class_name: 'User'
-  has_one :head_backend, class_name: 'User'
+  belongs_to :product_owner, class_name: 'User'
+  belongs_to :head_design, class_name: 'User'
+  belongs_to :head_frontend, class_name: 'User'
+  belongs_to :head_backend, class_name: 'User'
 
   has_and_belongs_to_many :contributors, class_name: 'User'
 
