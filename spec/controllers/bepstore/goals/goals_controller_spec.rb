@@ -11,6 +11,8 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
   let!(:activity) { FactoryGirl.create(:goal, user: user, groups: [group]) }
   let!(:activity2) { FactoryGirl.create(:goal, groups: [group]) }
 
+  let!(:goal_with_resources) { FactoryGirl.create(:goal_with_resources) }
+
   let!(:params) do
     {
       title: 'Testing title'
@@ -18,4 +20,18 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
   end
 
   it_behaves_like 'ActivitiesController'
+
+  describe 'GET #find' do
+    let(:action) do
+      proc do
+        get :find, ids: [goal_with_resources.id]
+      end
+    end
+
+    describe 'with 5 resources' do
+        before { action.call }
+
+        it { expect(JSON.parse(response.body)['goals'][0]['github_ids'].length).to eq(5) }
+    end
+  end
 end
