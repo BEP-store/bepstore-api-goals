@@ -1,9 +1,10 @@
 # GoalSerializer
 class GoalSerializer < ActivitySerializer
-  self.perform_caching = false
-
   attributes :id, :title, :description, :status, :update
-  has_one :product_owner, :head_design, :head_frontend, :head_backend
+  has_one :product_owner
+  has_one :head_design
+  has_one :head_frontend
+  has_one :head_backend
   has_many :contributors
 
   def initialize(object, options)
