@@ -24,7 +24,7 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
   describe 'GET #find' do
     let(:action) do
       proc do
-        get :find, ids: [goal_with_resources.id]
+        get :find, params: { ids: [goal_with_resources.id] }
       end
     end
 
