@@ -1,11 +1,11 @@
 # GoalSerializer
 class GoalSerializer < ActivitySerializer
   attributes :id, :title, :description, :status, :update
-  has_one :product_owner
-  has_one :head_design
-  has_one :head_frontend
-  has_one :head_backend
-  has_many :contributors
+  has_one :product_owner, polymorphic: true, serializer: UserSerializer
+  has_one :head_design, polymorphic: true
+  has_one :head_frontend, polymorphic: true
+  has_one :head_backend, polymorphic: true
+  has_many :contributors, polymorphic: true
 
   def initialize(object, options)
     super(object, options)
