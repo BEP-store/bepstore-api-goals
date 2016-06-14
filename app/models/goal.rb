@@ -8,19 +8,19 @@ class Goal < Activity
   field :update_text, type: String
 
   # Core team
-  belongs_to :product_owner, class_name: 'User', autosave: true, polymorphic: true, index: true
-  belongs_to :head_design, class_name: 'User', autosave: true, polymorphic: true, index: true
-  belongs_to :head_frontend, class_name: 'User', autosave: true, polymorphic: true, index: true
-  belongs_to :head_backend, class_name: 'User', autosave: true, polymorphic: true, index: true
+  belongs_to :product_owner, class_name: 'User'
+  belongs_to :head_design, class_name: 'User'
+  belongs_to :head_frontend, class_name: 'User'
+  belongs_to :head_backend, class_name: 'User'
 
-  has_and_belongs_to_many :contributors, class_name: 'User', index: true
+  has_and_belongs_to_many :contributors, class_name: 'User'
 
   has_many :resources
   accepts_nested_attributes_for :resources
 
   alias_attribute :name, :title
 
-  #validates :parents, presence: true
+  # validates :parents, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true

@@ -21,17 +21,17 @@ RSpec.describe BEPStore::Goals::GoalsController, type: :controller do
 
   it_behaves_like 'ActivitiesController'
 
-  describe 'GET #find' do
+  describe 'GET #filter' do
     let(:action) do
       proc do
-        get :find, params: { ids: [goal_with_resources.id] }
+        get :filter, params: { filter: { id: goal_with_resources.id } }
       end
     end
 
     describe 'with 5 resources' do
-        before { action.call }
+      before { action.call }
 
-        it { expect(JSON.parse(response.body)['goals'][0]['github_ids'].length).to eq(5) }
+      it { expect(JSON.parse(response.body, symbolize_names: true)[:data][0][:relationships][:githubs][:data].length).to eq(5) }
     end
   end
 end

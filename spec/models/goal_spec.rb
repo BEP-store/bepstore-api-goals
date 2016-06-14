@@ -18,7 +18,7 @@ RSpec.describe Goal, type: :model do
 
   it_behaves_like 'Activity'
 
-  subject {goal_with_resources}
+  subject { goal_with_resources }
 
   it { should respond_to(:resources) }
 
