@@ -4,6 +4,6 @@ class GoalPolicy < ActivityPolicy
   end
 
   def permitted_attributes
-    [:title, :description, :status, :updateText, :product_owner_id, :head_design_id, :head_frontend_id, :head_backend_id, contributor_ids: [], resources: [:id, :route, :type]]
+    super + [:title, :description, :status, :update_text, :product_owner_id, :head_design_id, :head_frontend_id, :head_backend_id, contributor_ids: [], resources: [:id, :route, :type]]
   end
 end
