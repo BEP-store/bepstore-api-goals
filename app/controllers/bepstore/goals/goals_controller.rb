@@ -1,6 +1,11 @@
 module BEPStore
   module Goals
     class GoalsController < V1::ActivitiesController
+
+      def included_relationships
+        super + ['product_owner', 'head_design', 'head_frontend', 'head_backend']
+      end
+
       def update_params
         params = super
 
