@@ -1,11 +1,19 @@
 # GoalSerializer
 class GoalSerializer < ActivitySerializer
+  cache key: 'resources', expires_in: 1.minutes
+
   attributes :id, :title, :description, :status, :update_text
   has_one :product_owner
   has_one :head_design
   has_one :head_frontend
   has_one :head_backend
   has_many :contributors
+
+  has_many :resources do
+    object.resources.map do |resource|
+      { type: 'resources', id: resource.route } if resource.route.present?
+    end
+  end
 
   def initialize(object, options)
     super(object, options)
