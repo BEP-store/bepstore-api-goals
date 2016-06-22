@@ -10,12 +10,12 @@ module BEPStore
         params = super
 
         # Make actual resources from hash
-        if params['resources']
-          res = params['resources'].map do |hash|
-            Resource.new hash
+        if params['repo_ids']
+          res = params['repo_ids'].map do |hash|
+            Repo.new route:hash
           end
 
-          params.merge(resources: res)
+          params.merge(repos: res)
         end
       end
     end

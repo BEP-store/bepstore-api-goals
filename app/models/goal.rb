@@ -15,8 +15,7 @@ class Goal < Activity
 
   has_and_belongs_to_many :contributors, class_name: 'User'
 
-  has_many :resources
-  accepts_nested_attributes_for :resources
+  has_many :repos
 
   alias_attribute :name, :title
 

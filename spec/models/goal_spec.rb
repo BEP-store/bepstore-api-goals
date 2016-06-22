@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Goal, type: :model do
   let(:goal) { FactoryGirl.create(:goal) }
-  let(:goal_with_resources) { FactoryGirl.create(:goal_with_resources) }
+  let(:goal_with_repos) { FactoryGirl.create(:goal_with_repos) }
 
   subject { goal }
 
@@ -18,13 +18,13 @@ RSpec.describe Goal, type: :model do
 
   it_behaves_like 'Activity'
 
-  subject { goal_with_resources }
+  subject { goal_with_repos }
 
-  it { should respond_to(:resources) }
+  it { should respond_to(:repos) }
 
-  describe '#resource count' do
-    it 'should have 5 resources' do
-      expect(goal_with_resources.resources.length).to eq(5)
+  describe '#repo count' do
+    it 'should have 5 repos' do
+      expect(goal_with_repos.repos.length).to eq(5)
     end
   end
 end
