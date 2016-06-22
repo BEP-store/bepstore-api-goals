@@ -14,7 +14,7 @@ module BEPStore
           res = params['repo_ids'].map do |hash|
             Repo.new route:hash
           end
-          binding.pry
+
           params.merge(repos: res)
         end
       end

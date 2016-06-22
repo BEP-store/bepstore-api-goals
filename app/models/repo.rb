@@ -1,4 +1,4 @@
-class Repo < Activity
+class Repo
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
