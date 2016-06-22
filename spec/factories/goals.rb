@@ -13,13 +13,13 @@ FactoryGirl.define do
       end
     end
 
-    factory :goal_with_resources do
+    factory :goal_with_repos do
       transient do
-        resources_count 5
+        repos_count 5
       end
 
       after(:create) do |goal, evaluator|
-        create_list(:resource, evaluator.resources_count, goal: goal)
+        create_list(:repo, evaluator.repos_count, goal: goal)
       end
     end
   end

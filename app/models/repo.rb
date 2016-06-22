@@ -1,4 +1,4 @@
-class Resource
+class Repo < Activity
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
@@ -6,10 +6,8 @@ class Resource
   belongs_to :goal
 
   field :route, type: String
-  field :type, type: String
 
   validates :route, presence: true
-  validates :type, presence: true
 
   def id
     route
